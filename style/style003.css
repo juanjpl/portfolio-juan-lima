@@ -13,10 +13,6 @@
   --color-font-brown-005: #8e8d8a;
   --color-font-brown-006: #d8c3a5;
   --color-font-brown-007: #eae7dc;
-
-  --offset: 0px;
-  --move-initial: calc(-10% + var(--offset));
-  --move-final: calc(-50% + var(--offset));
 }
 
 * {
@@ -50,12 +46,12 @@ html {
 .navbar {
   position: fixed;
   width: 100vw;
-  height: 10%;
+  height: 15%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2em;
+  padding: 2em;
 }
 
 .links {
@@ -130,11 +126,6 @@ html {
   background-color: var(--color-font-brown-001);
   color: white;
 }
-.navbar > .iniciales > h2 {
-  text-transform: uppercase;
-  font-size: 3em;
-  text-align: center;
-}
 
 .box {
   width: 0vw;
@@ -154,46 +145,6 @@ html {
   left: 90vw;
 }
 
-.marquee {
-  display: flex;
-  width: 100%;
-  height: max-content;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  transition: all 0.5s;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  letter-spacing: 20px;
-  overflow: hidden;
-  span {
-    padding: 0 0.1em;
-    white-space: nowrap;
-  }
-}
-
-.marquee-inner {
-  padding: 0.2em 0;
-  width: 100vw;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  height: max-content;
-  display: flex;
-  position: relative;
-  transform: translate3d(var(--move-initial), 0, 0);
-  animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translate3d(0,0,0);
-  }
-  100% {
-    transform: translate3d(-100%,0,0);
-  }
-}
-
 .links > ul > div {
   padding-right: 0.2em;
   margin-top: 0.6em;
@@ -201,9 +152,12 @@ html {
 }
 .social-icons {
   display: flex;
+  width: 20vw;
+  height: 100%;
   flex-direction: row;
   justify-content: flex-end;
   width: max-content;
+  padding: 0 1.5em;
 }
 
 .social-icons > a {
@@ -218,8 +172,38 @@ html {
   transition: all 0.8s ease-in-out;
   color: var(--color-font-red-001);
 }
-.social-icons > a > i:hover {
-  scale: 1.5;
+
+.stock-ticker {
+  width: 100%;
+  font-size: 2.5em;
+  padding: 0.5em 0;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  --gap: 20px;
+  gap: var(--gap);
+  letter-spacing: 0.3em;
+}
+
+.stock-ticker ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  animation: scroll 50s linear infinite;
+}
+
+.stock-ticker > ul > li > span {
+  margin-inline: 4px;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
 .logo > h2 {
