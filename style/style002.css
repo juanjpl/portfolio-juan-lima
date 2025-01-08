@@ -63,9 +63,10 @@ html {
   height: 100%;
   flex-direction: column;
   justify-content: center;
+
 }
 .links > ul {
-  margin-bottom: 3em;
+ 
   width: 100%;
   height: max-content;
   display: flex;
@@ -78,7 +79,7 @@ html {
   flex-direction: row;
   align-self: flex-end;
   transition: all 400ms ease-in;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
   height: max-content;
   position: relative;
   overflow: hidden;
@@ -125,6 +126,10 @@ html {
   font-weight: 800;
   font-size: 1.2em;
   letter-spacing: 2px;
+  padding: 0.5em 0.8em;
+  border: 1px solid var(--color-font-brown-001);
+  background-color: var(--color-font-brown-001);
+  color: white;
 }
 .navbar > .iniciales > h2 {
   text-transform: uppercase;
@@ -191,6 +196,7 @@ html {
 }
 
 .links > ul > div {
+
   padding-right: 0.2em;
   margin-top: 0.6em;
   width: 100%;
