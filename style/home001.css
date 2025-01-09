@@ -2,6 +2,9 @@
 
 :root {
   --font-dnSans: "DM Sans", serif;
+  --color-blue-dark-001: #013d87;
+  --color-blue-dark-002: #3391ef;
+  
 
   --color-font-brown-001: #a47864;
   --color-font-brown-002: #c0a294;
@@ -19,31 +22,41 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-align: center;
   font-family: var(--font-dnSans);
-  color: var(--color-font-brown-001);
+  color: white;
 }
 
 html {
   background-color: transparent;
 }
 
+
+body {
+    background-image: url(../img/home004.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position-y: 60%;
+  }
+
 .pagThree {
-  background-color: var(--color-font-brown-003);
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  align-items: flex-end;
   background-image: url("../img/s-l1200.png");
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position-y: 50px;
+  background-size: 45%;
+
   width: 100vw;
   height: 100vh;
-  font-size: 2.5em;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  justify-content: space-around;
 }
 
 .navbar {
+
   position: fixed;
   width: 100vw;
   height: 15%;
@@ -51,61 +64,55 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
+  padding: 2em;
 }
 
 .links {
+
   display: flex;
-  width: 60vw;
-  height: 100%;
-  flex-direction: row;
+  width: 50%;
+  height: 100vh;
+  flex-direction: column;
   justify-content: center;
-  padding: 0.5em;
 }
 .links > ul {
-  width: min-content;
-  height: 100%;
+
+  width: 100%;
+  height: max-content;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
+  margin-top:2em;
 }
 
 .links > ul > li {
+  width: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  align-self: flex-end;
   transition: all 400ms ease-in;
-  width: min-content;
-  height: 50%;
+  margin-bottom: 0.3em;
+  height: max-content;
   position: relative;
   overflow: hidden;
   z-index: 2;
   transition: 0.6s ease all;
-  margin: 0 1em;
 }
 .links > ul > li::after {
   content: "";
   width: 100%;
-  height: 100%;
   position: absolute;
   z-index: 1;
-  top: -100px;
-  left: 0;
-  background-color: var(--color-font-red-002);
+  bottom: 0px;
+  left: 100%;
+  border-bottom: 100px solid var(--color-blue-dark-002);
+  border-top: 100px solid var(--color-blue-dark-002);
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
   transition: 0.6s ease-in-out all;
 }
 
-/*
-  border-bottom: 100px solid var(--color-font-red-002);
-  border-top: 100px solid var(--color-font-red-002);
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-*/
-
 .links > ul > li:hover::after {
-  top: 0px;
+  left: 0px;
 }
 
 .links > ul > li:hover > a {
@@ -113,19 +120,19 @@ html {
 }
 
 .links > ul > li > a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 0.8em;
-  text-transform: uppercase;
-  font-size: 1em;
-  letter-spacing: 15px;
-  width: min-content;
+  padding: 0.2em 1.8em;
+  margin: 0.5em;
+  font-size: 0.6em;
+  align-items: center;
+  text-align: right;
+  letter-spacing: 20px;
+  width: 100%;
   height: 100%;
   z-index: 4;
-  font-weight: 800;
+  color:var(--color-blue-dark-001);
   transition: all 0.4s ease-in-out;
 }
+
 
 .navbar > .logo > h2 {
   text-transform: capitalize;
@@ -133,8 +140,8 @@ html {
   font-size: 1.2em;
   letter-spacing: 2px;
   padding: 0.5em 0.8em;
-  border: 1px solid var(--color-font-brown-001);
-  background-color: var(--color-font-brown-001);
+  border: 1px solid var(--color-blue-dark-002);
+  background-color: var(--color-blue-dark-002);
   color: white;
 }
 
@@ -156,6 +163,11 @@ html {
   left: 90vw;
 }
 
+.links > ul > div {
+  padding-right: 0.2em;
+  margin-top: 0.6em;
+  width: 100%;
+}
 .social-icons {
   display: flex;
   width: 20vw;
@@ -176,37 +188,18 @@ html {
   width: max-content;
   font-size: 1.8em;
   transition: all 0.8s ease-in-out;
-  color: var(--color-font-red-001);
+  color: var(--color-blue-dark-002);
+
 }
 
 .social-icons > a > i:hover {
-  scale: 1.5;
-}
-
-.logo {
-  width: 12%;
-}
-
-.logo > h2 {
-  position: relative;
-  animation: myfirst 0.5s infinite;
-  animation-direction: alternate;
-}
-
-@keyframes myfirst {
-  0% {
-    left: 0px;
-    top: 0px;
-  }
-  100% {
-    left: 10px;
-    top: 0px;
-  }
+scale: 1.5;
 }
 
 .stock-ticker {
   width: 100%;
-  font-size: 2.5em;
+  font-size: 3em;
+  font-weight: 600;
   padding: 0.2em 0;
   overflow: hidden;
   user-select: none;
@@ -234,5 +227,22 @@ html {
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+.logo > h2 {
+  position: relative;
+  animation: myfirst 0.5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes myfirst {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    left: 10px;
+    top: 0px;
   }
 }

@@ -235,3 +235,36 @@ html {
     top: 0px;
   }
 }
+
+.stock-ticker {
+  width: 100%;
+  font-size: 2.5em;
+  padding: 0.2em 0;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  --gap: 20px;
+  gap: var(--gap);
+  letter-spacing: 0.3em;
+}
+
+.stock-ticker ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  animation: scroll 50s linear infinite;
+}
+
+.stock-ticker > ul > li > span {
+  margin-inline: 100px;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
